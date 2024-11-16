@@ -1,46 +1,37 @@
 # Task Bliss - A Simple Task Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 1. Application and Functionality
+Task Bliss is a minimalist Task Manager built using React and TypeScript. It helps you organize your daily tasks with an easy-to-use interface and a clean design. The core functionalities of the application include:
 
-In the project directory, you can run:
+- Add New Tasks: Quickly add tasks using the input field. Press Enter to add the task or click the Add Task button.
+- Mark Tasks as Completed: Toggle tasks as completed to track your progress effectively.
+- Delete Tasks: Easily remove tasks you no longer need with a single click.
+- Task Persistence: Your tasks are saved in the browser's local storage, so they remain even if you close or refresh the page.
+- Empty State Message: When there are no tasks, a simple message is displayed to prompt you to add a new task.
 
-### `npm start`
+## 2. Setup and Launch Process
+Follow these steps to set up and run the project on your local machine:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Prerequisites
+- Node.js (version 14 or later)
+- npm or yarn
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Installation Steps
+1. Clone the Repository:
+   'git clone <your-repository-link>'
+   'cd task-bliss'
+2. Install Dependencies:
+   'npm install'
+3. Start the Development Server:
+   'npm run dev'
+4. Open the Application:
+   The app will be running at http://localhost:5173.
 
-### `npm test`
+## 3. Assumptions Made During Development
+- User Simplicity: The app was designed with a focus on simplicity and ease of use, making it ideal for users who want a straightforward task management tool without extra complexities.
+- Local Storage for Persistence: To keep the application lightweight and easy to set up, we used the browser's local storage to persist tasks, eliminating the need for a backend.
+- Core Features First: The initial version focuses on core task management features like adding, deleting, and completing tasks. Future updates may include advanced features like task prioritization, 
+   sorting, and search.
+- UI and Design: A clean and modern UI was implemented using pastel colors and soft animations to enhance user experience without overwhelming the user with too many visual elements.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
