@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import TaskInput from './components/TaskInput';
+import TaskList from './components/TaskList';
+import EmptyState from './components/EmptyState';
+import { Task } from './types';
+import './styles.css';
 
-function App() {
+const App: React.FC = () => {
+  const [tasks, setTasks] = useState<Task[]>(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  const addTask = (title: string) => {
+    const newTask: Task = {
+      id: crypto.randomUUID(),
+      title,
+      isCompleted: false,
+      priority: "low",
+    };
+    setTasks((prevTasks) => [...prevTasks, newTask]);
+  };
+
+  const toggleComplete = (id: string) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id ? { ...task, isCompleted: !task.isCompleted } : task
+      )
+    );
+  };
+
+  const deleteTask = (id: string) => {
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== id));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>✨ Task Bliss ✨</h1>
+      <TaskInput addTask={addTask} />
+      {tasks.length > 0 ? (
+        <TaskList tasks={tasks} toggleComplete={toggleComplete} deleteTask={deleteTask} />
+      ) : (
+        <EmptyState />
+      )}
     </div>
   );
-}
+};
 
 export default App;
