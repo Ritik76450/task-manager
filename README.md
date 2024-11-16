@@ -35,3 +35,8 @@ Follow these steps to set up and run the project on your local machine:
    sorting, and search.
 - UI and Design: A clean and modern UI was implemented using pastel colors and soft animations to enhance user experience without overwhelming the user with too many visual elements.
 
+## 4. Screenshots of the project
+![image](https://github.com/user-attachments/assets/47c431ac-36b8-47ca-a08a-fef415c11879)
+
+![image](https://github.com/user-attachments/assets/5f46ceb3-02c2-496e-ac85-3ce6a4107d05)
+
